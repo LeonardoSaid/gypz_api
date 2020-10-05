@@ -33,5 +33,26 @@ python manage.py migrate
 python manage.py runserver
 ```
 
-## License
+## Docker
+
+### Dockerfile
+
+Se quiser usar o Dockerfile presente no root do projeto basta montar a imagem e executar:
+
+```bash
+# executando gypz_api em modo detached na porta 8000
+docker build -t gypz_api .
+docker run -dp 8000:8000 gypz_api
+```
+
+### Docker-compose
+
+Para utilizar o `docker-compose.yml` providenciado, coloque o arquivo junto com as pastas dos projetos `gypz_api` e `gypz_dom` e execute:
+
+```bash
+# com docker-compose.yml, /gypz_dom/ e /gypz_api/ no mesmo diretório
+docker-compose up -d --build
+```
+
+## Licença
 [MIT](https://choosealicense.com/licenses/mit/)
